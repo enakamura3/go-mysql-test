@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	dbConnection := adapters.MysqlConnect()
+	dbConnection := adapters.MysqlConnectHS(adapters.HOSTNAME, adapters.SCHEMA)
 	defer dbConnection.Close()
 
 	query := "select id, first_name, last_name, birthday, created_at from test.user;"
